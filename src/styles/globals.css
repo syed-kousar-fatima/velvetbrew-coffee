@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --coffee-dark: #0F0B08;
+  --espresso: #1B1410;
+  --mocha: #3E2723;
+  --caramel: #C08B5C;
+  --latte: #E8D5C4;
+  --cream: #F8F3EE;
+  --gold: #D4A373;
+  --accent: #FFB347;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-coffee-dark text-cream font-inter antialiased overflow-x-hidden;
+  }
+
+  selection {
+    @apply bg-gold/30 text-gold;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/5 rounded-3xl;
+  }
+
+  .container-custom {
+    @apply max-w-[2560px] mx-auto px-6 md:px-12 lg:px-24;
+  }
+}

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:wght@100..900&family=Poppins:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --coffee-dark: #0F0B08;
+    --espresso: #1B1410;
+    --mocha: #3E2723;
+    --caramel: #C08B5C;
+    --latte: #E8D5C4;
+    --cream: #F8F3EE;
+    --gold: #D4A373;
+    --accent: #FFB347;
+  }
+
+  body {
+    @apply bg-coffee-dark text-cream font-inter antialiased overflow-x-hidden;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-cormorant italic;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/5 rounded-3xl;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 bg-gold text-coffee-dark font-poppins font-bold uppercase tracking-widest rounded-full transition-all duration-300 hover:bg-accent hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply px-8 py-3 border border-gold text-gold font-poppins font-bold uppercase tracking-widest rounded-full transition-all duration-300 hover:bg-gold hover:text-coffee-dark;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--coffee-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mocha);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
